@@ -87,7 +87,28 @@ public class BearController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position += moveVect * moveSpeed * Time.fixedDeltaTime;
+        if(moveVect == Vector3.zero) { return; }
+
+        var newPos = transform.position + moveVect * moveSpeed * Time.fixedDeltaTime;
+
+        if(newPos.x > 6.3f)
+        {
+            newPos.x = 6.3f;
+        }else if(newPos.x < -6.8f)
+        {
+            newPos.x = -6.8f;
+        }
+
+        if (newPos.y > 5.7f)
+        {
+            newPos.y = 5.7f;
+        }
+        else if (newPos.y < -3.4f)
+        {
+            newPos.y = -3.4f;
+        }
+
+        transform.position = newPos;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
