@@ -10,10 +10,9 @@ public class ObjectPools : MonoBehaviour
         {
             if (instance != null)
             {
-                return instance;      // 已經註冊的Singleton物件
+                return instance;      
             }
             instance = FindObjectOfType<ObjectPools>();
-            //尋找已經在Scene的Singleton物件:
             if (instance != null)
             {
                 return instance;

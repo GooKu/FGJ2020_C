@@ -7,7 +7,6 @@ public class Hunter : People
     [SerializeField] private float shootRadius;
 
     [SerializeField] private Transform[] wayPoints = new Transform[10];
-    private Transform lastWayPoint;
 
     [SerializeField] private float wayPointDetectDist;
     private int randomIndex = -1;
@@ -63,11 +62,11 @@ public class Hunter : People
         {
             randomIndex = -1;
         }
-
     }
 
     private void Shoot()
     {
+        BearController player = (BearController)FindObjectOfType(typeof(BearController));
         //die
     }
 
