@@ -27,4 +27,7 @@ public class InputManager : MonoBehaviour
             bearController.Stop();
         }
     }
+
+
+//    public void 
 }

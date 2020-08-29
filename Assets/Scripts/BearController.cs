@@ -9,6 +9,9 @@ public class BearController : MonoBehaviour
 
     private Vector3 moveVect = Vector3.zero;
 
+    private GameObject c4 = null;
+    private bool isGetC4 = false;
+
     public void Move(Direction direction)
     {
         switch (direction)
@@ -43,21 +46,48 @@ public class BearController : MonoBehaviour
 
     public void Stealth()
     {
-
+        //TODO:
     }
 
     public void Pick()
     {
-
+        if(c4 != null)
+        {
+            isGetC4 = true;
+            c4.transform.SetParent(transform);
+        }
     }
 
     public void PutDown()
     {
-
+        if (isGetC4)
+        {
+            c4.transform.SetParent(null);
+            isGetC4 = false;
+            c4 = null;
+            //TODO:Add bomb component
+        }
     }
 
     private void FixedUpdate()
     {
         transform.position += moveVect * moveSpeed * Time.fixedDeltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(c4 != null) { return; }
+
+        if (collision.CompareTag("C4"))
+        {
+            c4 = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (isGetC4) { return; }
+
+        c4 = null;
     }
 }
