@@ -18,7 +18,6 @@ public class Worker : People
         if (player != null)
         {
             RunAway();
-            Debug.Log($"worker{ player }");
         }
         else
         {
@@ -32,8 +31,14 @@ public class Worker : People
         transform.position -= -runDir * moveSpeed * Time.deltaTime;
     }
 
+    private void CutDownTree()
+    {
+        mapManager.ChangeMapItem(transform.position, MapItemType.PINE_ROOT);
+    }
+
     private void Build()
     {
 
     }
+
 }
