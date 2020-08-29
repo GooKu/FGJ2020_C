@@ -54,7 +54,8 @@ public class BearController : MonoBehaviour
     }
     public void CancelStealth()
     {
-        //TODO
+        IsStealth = false;
+        //TODO: showing
     }
 
     public void Pick()
@@ -99,6 +100,6 @@ public class BearController : MonoBehaviour
 
     public void Death()
     {
-        //TODO
+        //TODO:
     }
 }
