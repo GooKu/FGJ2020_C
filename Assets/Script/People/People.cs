@@ -7,6 +7,7 @@ public abstract class People : MonoBehaviour
     [SerializeField] protected LayerMask playerLayer;
     protected Collider2D player;
     protected BearController playerController;
+    protected GameMapManager mapManager;
 
     [SerializeField] protected float detectRadius;
     [SerializeField] protected float moveSpeed;
@@ -14,6 +15,7 @@ public abstract class People : MonoBehaviour
     private void Awake()
     {
         playerController = (BearController)FindObjectOfType(typeof(BearController));
+        mapManager = (GameMapManager)FindObjectOfType(typeof(GameMapManager));
     }
 
     public void Update()
