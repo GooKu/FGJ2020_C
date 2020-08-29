@@ -6,12 +6,21 @@ public class BearController : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 5;
+    [SerializeField]
+    private Sprite bear = null;
+
+    private SpriteRenderer spriteRenderer;
 
     private Vector3 moveVect = Vector3.zero;
 
     private GameObject c4 = null;
     public bool IsGetC4 { get; private set; } = false;
     public bool IsStealth { get; private set; } = false;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public void Move(Direction direction)
     {
@@ -72,7 +81,7 @@ public class BearController : MonoBehaviour
 
         c4.transform.SetParent(null);
         IsGetC4 = false;
-        c4.AddComponent<Bomb>().StartUp();
+        c4.GetComponent<Bomb>().StartUp();
         c4 = null;
     }
 
@@ -100,6 +109,6 @@ public class BearController : MonoBehaviour
 
     public void Death()
     {
-        //TODO:
+        spriteRenderer.sprite = bear;
     }
 }
