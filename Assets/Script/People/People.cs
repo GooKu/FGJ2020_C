@@ -6,9 +6,15 @@ public abstract class People : MonoBehaviour
 {
     [SerializeField] protected LayerMask playerLayer;
     protected Collider2D player;
+    protected BearController playerController;
 
     [SerializeField] protected float detectRadius;
     [SerializeField] protected float moveSpeed;
+
+    private void Awake()
+    {
+        playerController = (BearController)FindObjectOfType(typeof(BearController));
+    }
 
     public void Update()
     {
@@ -19,8 +25,15 @@ public abstract class People : MonoBehaviour
     {
         player = Physics2D.OverlapCircle(transform.position, detectRadius, playerLayer);
 
-        
+        if (playerController.IsStealth)
+        {
+            return;
+        }
     }
 
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = GetComponent<SpriteRenderer>().color;
+        Gizmos.DrawWireSphere(gameObject.transform.position, detectRadius);
+    }
 }

@@ -14,14 +14,11 @@ public class Hunter : People
     protected override void DetectPlayer(float detectRadius)
     {
         base.DetectPlayer(detectRadius);
+        Debug.Log($"hunter{ player }" );
 
         if (player != null && player.gameObject.CompareTag("Player"))
         {
-            //chase && shoot target
-            
             ChaseTarget(player.transform, moveSpeed);
-
-
         }
         else
         {
@@ -47,11 +44,9 @@ public class Hunter : People
 
     private void Patrol()
     {
-        //random choose next point to go
-
         if(randomIndex < 0)
         {
-            randomIndex = Random.Range(0, wayPoints.Length);
+            randomIndex = Random.Range(1, wayPoints.Length);
         }
         
         if ((transform.position - wayPoints[randomIndex].position).sqrMagnitude > wayPointDetectDist * wayPointDetectDist) 
@@ -66,14 +61,9 @@ public class Hunter : People
 
     private void Shoot()
     {
-        BearController player = (BearController)FindObjectOfType(typeof(BearController));
-        //die
+        playerController.Death();
     }
 
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(gameObject.transform.position, detectRadius);
-    }
+
 }
