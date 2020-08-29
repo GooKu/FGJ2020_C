@@ -21,9 +21,17 @@ public class BearController : MonoBehaviour
                 break;
             case Direction.Left:
                 moveVect = Vector3.left;
+                if(transform.forward == Vector3.forward)
+                {
+                    transform.forward = Vector3.back;
+                }
                 break;
             case Direction.Right:
                 moveVect = Vector3.right;
+                if (transform.forward == Vector3.back)
+                {
+                    transform.forward = Vector3.forward;
+                }
                 break;
         }
     }
