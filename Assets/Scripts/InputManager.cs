@@ -7,7 +7,27 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (bear.IsGetC4) { return; }
+            bear.Stealth();
+        }else if (Input.GetKeyUp(KeyCode.E))
+        {
+            bear.CancelStealth();
+        }else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (bear.IsStealth) { return; }
+
+            if (bear.IsGetC4)
+            {
+                bear.PutDown();
+            }
+            else
+            {
+                bear.Pick();
+            }
+        }
+        else if (Input.GetKey(KeyCode.A))
         {
             bear.Move(Direction.Left);
         }else if (Input.GetKey(KeyCode.D))
@@ -24,27 +44,5 @@ public class InputManager : MonoBehaviour
         {
             bear.Stop();
         }
-    }
-
-    //trigger by button
-    public void OnPickClick()
-    {
-        if (bear.IsStealth) { return; }
-
-        if (bear.IsGetC4)
-        {
-            bear.PutDown();
-        }
-        else
-        {
-            bear.Pick();
-        }
-    }
-
-    //trigger by button
-    public void OnStealthClick()
-    {
-        if (bear.IsGetC4) { return; }
-
     }
 }

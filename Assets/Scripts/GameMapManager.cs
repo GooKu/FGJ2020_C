@@ -18,11 +18,12 @@ public class MapItem
 
 public class GameMapManager : MonoBehaviour
 {
+    public int mapIndex = 0;
 
     private const int map_y_max = 24;
     private const int map_x_max = 32;
 
-    private int[,] mapStage1 = new int[map_y_max, map_x_max] {
+    private int[,] mapStage0 = new int[map_y_max, map_x_max] {
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
@@ -53,28 +54,76 @@ public class GameMapManager : MonoBehaviour
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0}
     }; // 32 x 24 (1024 x 768)
 
+    private int[,] mapStage1 = new int[map_y_max, map_x_max] {
+        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        {0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
+        {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+        {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+        {0,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0},
+        {0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0},
+        {0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0},
+        {0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,1,0},
+        {0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0},
+        {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+        {0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
+        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+    };
+
     private List<int[,]> m_mapStages = new List<int[,]>();
 
+
+
     private List<MapItem> m_listMapItems = new List<MapItem>();
+    private List<MapItem> m_listMapGrass = new List<MapItem>();
+
+
+    private void GenerateGrass()
+    {
+        for (var y = 0; y < map_y_max; ++y) {
+            for (var x = 0; x < map_x_max; ++x) {
+                var n = 0.5f;
+                var odd = 0.25f;
+                float pos_x = -8.0f + (x * n) + ((y%2) == 1 ? odd : 0f);
+                float pos_y = 7.0f + (-y * n);
+                var mapGrass = new MapItem(CreateInst(GetMapInstBy(0),
+                                            new Vector3(pos_x, pos_y, 0)));
+                var spriteRenderer = mapGrass.go.GetComponent<SpriteRenderer>();
+                if (spriteRenderer) {
+                    spriteRenderer.sortingOrder = -1;
+                }
+                mapGrass.go.transform.localScale = new Vector3(2.0f, 2.0f, 1.0f);
+                m_listMapGrass.Add(mapGrass);
+            }
+        }
+    }
 
     private void Start()
     {
-        var mapIndex = 0;
+        // var mapIndex = 0;
+        m_mapStages.Add(mapStage0);
         m_mapStages.Add(mapStage1);
+
+        GenerateGrass();
 
         for (var y = 0; y < map_y_max; ++y) {
             for (var x = 0; x < map_x_max; ++x) {
-                // Debug.Log($"map[{y},{x}] = {m_mapStages[mapIndex][y,x]}");
-                if (m_mapStages[mapIndex][y,x] >= 0) {
+                if (m_mapStages[mapIndex][y,x] > 0) {
                     var n = 0.5f;
                     var odd = 0.25f;
                     float pos_x = -8.0f + (x * n) + ((y%2) == 1 ? odd : 0f);
                     float pos_y = 7.0f + (-y * n);
-                    // var ufo = new MapItem(CreateInst(string.Format("Prefabs/pine_tree{0}", m_mapUFO[mapIndex][y,x]),
-                    //                         new Vector3(pos_x, pos_y, 0)));
-                    // var prefab = CreateInst($"Prefabs/pine_tree", new Vector3(pos_x, pos_y, 0));
-                    // var mapItem = new MapItem(prefab);
-
                     var mapItem = new MapItem(CreateInst(GetMapInstBy(m_mapStages[mapIndex][y,x]),
                                               new Vector3(pos_x, pos_y, 0)));
                     // Debug.Log($"map[{y},{x}] = {m_mapStages[mapIndex][y,x]}");
@@ -82,7 +131,6 @@ public class GameMapManager : MonoBehaviour
                     if (spriteRenderer) {
                         spriteRenderer.sortingOrder = y;
                     }
-
                     mapItem.go.transform.localScale = new Vector3(2.0f, 2.0f, 1.0f);
                     m_listMapItems.Add(mapItem);
                 }
@@ -100,7 +148,7 @@ public class GameMapManager : MonoBehaviour
         switch (number)
         {
             case 0:
-                return "Prefabs/pine_tree";
+                return "Prefabs/grass_random";
                 break;
             case 1:
                 return "Prefabs/pine_tree";
