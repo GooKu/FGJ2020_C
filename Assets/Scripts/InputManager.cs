@@ -1,33 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
     [SerializeField]
-    private BearController bearController;
+    private BearController bear;
 
     private void Update()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            bearController.Move(Direction.Left);
+            bear.Move(Direction.Left);
         }else if (Input.GetKey(KeyCode.D))
         {
-            bearController.Move(Direction.Right);
+            bear.Move(Direction.Right);
         }else if (Input.GetKey(KeyCode.W))
         {
-            bearController.Move(Direction.Up);
+            bear.Move(Direction.Up);
         }else if (Input.GetKey(KeyCode.S))
         {
-            bearController.Move(Direction.Down);
+            bear.Move(Direction.Down);
         }
         else
         {
-            bearController.Stop();
+            bear.Stop();
         }
     }
 
+    //trigger by button
+    public void OnPickClick()
+    {
+        if (bear.IsStealth) { return; }
 
-//    public void 
+        if (bear.IsGetC4)
+        {
+            bear.PutDown();
+        }
+        else
+        {
+            bear.Pick();
+        }
+    }
+
+    //trigger by button
+    public void OnStealthClick()
+    {
+        if (bear.IsGetC4) { return; }
+
+    }
 }
