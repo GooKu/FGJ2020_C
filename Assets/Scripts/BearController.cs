@@ -10,10 +10,13 @@ public class BearController : MonoBehaviour
     private Vector3 moveVect = Vector3.zero;
 
     private GameObject c4 = null;
-    private bool isGetC4 = false;
+    public bool IsGetC4 { get; private set; } = false;
+    public bool IsStealth { get; private set; } = false;
 
     public void Move(Direction direction)
     {
+        if (IsStealth) { return; }
+
         switch (direction)
         {
             case Direction.Up:
@@ -46,27 +49,30 @@ public class BearController : MonoBehaviour
 
     public void Stealth()
     {
-        //TODO:
+        IsStealth = true;
+        Stop();
+    }
+    public void CancelStealth()
+    {
+        //TODO
     }
 
     public void Pick()
     {
-        if(c4 != null)
-        {
-            isGetC4 = true;
-            c4.transform.SetParent(transform);
-        }
+        if(c4 == null) { return; }
+
+        IsGetC4 = true;
+        c4.transform.SetParent(transform);
     }
 
     public void PutDown()
     {
-        if (isGetC4)
-        {
-            c4.transform.SetParent(null);
-            isGetC4 = false;
-            c4 = null;
-            //TODO:Add bomb component
-        }
+        if (!IsGetC4) { return; }
+
+        c4.transform.SetParent(null);
+        IsGetC4 = false;
+        c4.AddComponent<Bomb>().StartUp();
+        c4 = null;
     }
 
     private void FixedUpdate()
@@ -86,8 +92,13 @@ public class BearController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (isGetC4) { return; }
+        if (IsGetC4) { return; }
 
         c4 = null;
+    }
+
+    public void Death()
+    {
+        //TODO
     }
 }
