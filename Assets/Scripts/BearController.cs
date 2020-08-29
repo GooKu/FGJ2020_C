@@ -131,5 +131,7 @@ public class BearController : MonoBehaviour
     public void Death()
     {
         spriteRenderer.sprite = bear;
+        EventManager.SendEvent(GameEvents.GameOver);
+        enabled = false;
     }
 }

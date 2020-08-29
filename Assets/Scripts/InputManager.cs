@@ -5,6 +5,18 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private BearController bear;
 
+    private void Start()
+    {
+        EventManager.AddListen(GameEvents.GameOver, Stop);
+        EventManager.AddListen(GameEvents.GameEnd, Stop);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.RemoveListen(GameEvents.GameOver, Stop);
+        EventManager.RemoveListen(GameEvents.GameEnd, Stop);
+    }
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.E))
@@ -44,5 +56,10 @@ public class InputManager : MonoBehaviour
         {
             bear.Stop();
         }
+    }
+
+    private void Stop(object[] callBack)
+    {
+        enabled = false;
     }
 }
