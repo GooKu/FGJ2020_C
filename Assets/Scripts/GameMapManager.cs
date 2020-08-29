@@ -3,15 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum MapItemType
+{
+    NONE,
+    PINE_TREE,
+    PINE_ROOT,
+
+
+    MAX
+    
+}
+
 public class MapItem
 {
     public static int uid = 0;
     public int id;
+    public int x;
+    public int y;
+    public MapItemType type;
     public GameObject go;
 
-    public MapItem(GameObject in_go)
+    public MapItem(GameObject in_go, int in_x, int in_y, MapItemType in_type)
     {
         id = ++uid;
+        x = in_x;
+        y = in_y;
+        type = in_type;
         go = in_go;
     }
 }
@@ -88,6 +105,7 @@ public class GameMapManager : MonoBehaviour
     private List<MapItem> m_listMapItems = new List<MapItem>();
     private List<MapItem> m_listMapGrass = new List<MapItem>();
 
+    private System.Random rnd;
 
     private void GenerateGrass()
     {
@@ -98,7 +116,8 @@ public class GameMapManager : MonoBehaviour
                 float pos_x = -8.0f + (x * n) + ((y%2) == 1 ? odd : 0f);
                 float pos_y = 7.0f + (-y * n);
                 var mapGrass = new MapItem(CreateInst(GetMapInstBy(0),
-                                            new Vector3(pos_x, pos_y, 0)));
+                                           new Vector3(pos_x, pos_y, 0)),
+                                           x, y, MapItemType.NONE);
                 var spriteRenderer = mapGrass.go.GetComponent<SpriteRenderer>();
                 if (spriteRenderer) {
                     spriteRenderer.sortingOrder = -1;
@@ -111,6 +130,8 @@ public class GameMapManager : MonoBehaviour
 
     private void Start()
     {
+        rnd = new System.Random();
+
         // var mapIndex = 0;
         m_mapStages.Add(mapStage0);
         m_mapStages.Add(mapStage1);
@@ -124,8 +145,10 @@ public class GameMapManager : MonoBehaviour
                     var odd = 0.25f;
                     float pos_x = -8.0f + (x * n) + ((y%2) == 1 ? odd : 0f);
                     float pos_y = 7.0f + (-y * n);
-                    var mapItem = new MapItem(CreateInst(GetMapInstBy(m_mapStages[mapIndex][y,x]),
-                                              new Vector3(pos_x, pos_y, 0)));
+                    int number = m_mapStages[mapIndex][y,x];
+                    var mapItem = new MapItem(CreateInst(GetMapInstBy(number),
+                                              new Vector3(pos_x, pos_y, 0)),
+                                              x, y, GetMapTypeBy(number));
                     // Debug.Log($"map[{y},{x}] = {m_mapStages[mapIndex][y,x]}");
                     var spriteRenderer = mapItem.go.GetComponent<SpriteRenderer>();
                     if (spriteRenderer) {
@@ -139,8 +162,28 @@ public class GameMapManager : MonoBehaviour
         
     }
 
-    private void Update() {
-        
+
+    private int inner_delay = 60;
+    private void Update()
+    {
+        // SlimeTest();
+    }
+
+    private void SlimeTest()
+    {
+        if (--inner_delay <= 0) {
+            inner_delay = 60;
+            var x = rnd.Next(0, map_x_max);
+            var y = rnd.Next(0, map_y_max);
+            var n = 0.5f;
+            var odd = 0.25f;
+            float pos_x = -8.0f + (x * n) + ((y%2) == 1 ? odd : 0f);
+            float pos_y = 7.0f + (-y * n);
+            var pos = new Vector3(pos_x, pos_y, 0);
+            // ChangeMapItem(pos, MapItemType.PINE_ROOT, x, y);
+            ChangeMapItem(pos, MapItemType.PINE_ROOT);
+            // ChangeMapItem(pos, MapItemType.PINE_ROOT, 3.0f);
+        }
     }
 
     private string GetMapInstBy(int number)
@@ -154,8 +197,17 @@ public class GameMapManager : MonoBehaviour
                 return "Prefabs/pine_tree";
                 break;
             default:
-                return "Prefabs/pine_tree";
+                return "Prefabs/grass_random";
                 break;
+        }
+    }
+
+    private MapItemType GetMapTypeBy(int number)
+    {
+        if (number < (int)MapItemType.MAX) {
+            return (MapItemType)number;
+        } else {
+            return MapItemType.NONE;
         }
     }
 
@@ -177,12 +229,41 @@ public class GameMapManager : MonoBehaviour
 
             // inst.GetComponent<UFOEnemyClick>().se_player = se_player;
 
-            Debug.Log ("CreateInst> Add A New Inst!");
+            // Debug.Log ("CreateInst> Add A New Inst!");
         } else {
             Debug.LogWarning ("CreateInst> Cannot Create Inst!");
         }
 
         return inst;
     }
+
+    private Sprite CreateSprite(string name)
+    {
+        Sprite sprite = Resources.Load<Sprite>(name);
+        if (sprite) {
+            return sprite;
+        } else {
+            Debug.Log($"Cannot find sprite by name: {name}");
+            return null;
+        }
+    }
+
+    public void ChangeMapItem(Vector3 pos, MapItemType type, float range = 5.0f) // , int x, int y)
+    {
+        var idx = 1;
+        foreach (var item in m_listMapItems) {
+            var dist = Vector3.Distance(pos, item.go.transform.position);
+            // Debug.Log(dist);
+            if (dist < range) {
+                var spriteRenderer = item.go.GetComponent<SpriteRenderer>();
+                if (spriteRenderer) {
+                    spriteRenderer.sprite = CreateSprite("Textures/pine_tree_example_02");
+                }
+                m_mapStages[idx][item.y, item.x] = (int)type;
+                break;
+            }
+        }        
+    }
+
 
 }
