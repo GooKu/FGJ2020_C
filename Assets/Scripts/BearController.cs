@@ -71,7 +71,7 @@ public class BearController : MonoBehaviour
 
         c4.transform.SetParent(null);
         IsGetC4 = false;
-        //TODO:Add bomb component
+        c4.AddComponent<Bomb>().StartUp();
         c4 = null;
     }
 
@@ -95,5 +95,10 @@ public class BearController : MonoBehaviour
         if (IsGetC4) { return; }
 
         c4 = null;
+    }
+
+    public void Death()
+    {
+        //TODO
     }
 }
