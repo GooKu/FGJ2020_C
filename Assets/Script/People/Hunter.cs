@@ -14,7 +14,6 @@ public class Hunter : People
     protected override void DetectPlayer(float detectRadius)
     {
         base.DetectPlayer(detectRadius);
-        Debug.Log($"hunter{ player }" );
 
         if (player != null)
         {
