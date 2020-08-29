@@ -99,8 +99,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   detectRadius: 3
-  moveSpeed: 4
-  shootRadius: 2
+  moveSpeed: 3
+  shootRadius: 1
   wayPoints:
   - {fileID: 0}
   - {fileID: 0}

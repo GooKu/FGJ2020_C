@@ -98,5 +98,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   detectRadius: 5
-  moveSpeed: 6
+  moveSpeed: 3
   building: {fileID: 0}
