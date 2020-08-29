@@ -1,12 +1,702 @@
 fileFormatVersion: 2
 guid: ec2460c594de0a745ad3c9b597827a48
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -632405102713226009
+    second: HunterOrc_0
+  - first:
+      213: -1485840412120942299
+    second: HunterOrc_1
+  - first:
+      213: -6827940755571127000
+    second: HunterOrc_2
+  - first:
+      213: 4744460120733969292
+    second: HunterOrc_3
+  - first:
+      213: -1004358914980645277
+    second: HunterOrc_4
+  - first:
+      213: -8707676149712249273
+    second: HunterOrc_5
+  - first:
+      213: -1783740441958367029
+    second: HunterOrc_6
+  - first:
+      213: -360117819313875829
+    second: HunterOrc_7
+  - first:
+      213: 1728162459070193165
+    second: HunterOrc_8
+  - first:
+      213: 6090573900074664872
+    second: HunterOrc_9
+  - first:
+      213: 7488689470879665307
+    second: HunterOrc_10
+  - first:
+      213: -7557892261812737165
+    second: HunterOrc_11
+  - first:
+      213: 4274259314724169440
+    second: HunterOrc_12
+  - first:
+      213: -9160279401080757112
+    second: HunterOrc_13
+  - first:
+      213: -8995738785721414119
+    second: HunterOrc_14
+  - first:
+      213: -8633443361245823388
+    second: HunterOrc_15
+  - first:
+      213: -6200886954289649463
+    second: HunterOrc_16
+  - first:
+      213: 3805912610617385516
+    second: HunterOrc_17
+  - first:
+      213: 5967973966032321355
+    second: HunterOrc_18
+  - first:
+      213: -5259033741752415335
+    second: HunterOrc_19
+  - first:
+      213: 715904274507250475
+    second: HunterOrc_20
+  - first:
+      213: -3457927678992469729
+    second: HunterOrc_21
+  - first:
+      213: 9139461756646628446
+    second: HunterOrc_22
+  - first:
+      213: -3713768962855882713
+    second: HunterOrc_23
+  - first:
+      213: 5660764720509074855
+    second: HunterOrc_24
+  - first:
+      213: -6943341126816112908
+    second: HunterOrc_25
+  - first:
+      213: -6842482597968167956
+    second: HunterOrc_26
+  - first:
+      213: 404774410275106879
+    second: HunterOrc_27
+  - first:
+      213: -1611319555794442708
+    second: HunterOrc_28
+  - first:
+      213: 965874741328295200
+    second: HunterOrc_29
+  - first:
+      213: 4202408834204752919
+    second: HunterOrc_0
+  - first:
+      213: -4425412939888762605
+    second: HunterOrc_1
+  - first:
+      213: -810727115679921978
+    second: HunterOrc_2
+  - first:
+      213: -6757469514845389676
+    second: HunterOrc_3
+  - first:
+      213: 4264078960776415232
+    second: HunterOrc_4
+  - first:
+      213: 6462094852024243437
+    second: HunterOrc_5
+  - first:
+      213: -2623617155347916339
+    second: HunterOrc_6
+  - first:
+      213: 8533327639290669397
+    second: HunterOrc_7
+  - first:
+      213: -1423099450958332130
+    second: HunterOrc_8
+  - first:
+      213: 1577493984723076907
+    second: HunterOrc_9
+  - first:
+      213: 2162781604026324860
+    second: HunterOrc_10
+  - first:
+      213: 8612169229553433594
+    second: HunterOrc_11
+  - first:
+      213: -7574854204972452546
+    second: HunterOrc_12
+  - first:
+      213: 1587587059787425481
+    second: HunterOrc_13
+  - first:
+      213: -3013085090442051999
+    second: HunterOrc_14
+  - first:
+      213: -4149615614499734217
+    second: HunterOrc_15
+  - first:
+      213: 7442068369547996474
+    second: HunterOrc_16
+  - first:
+      213: 223301074530142326
+    second: HunterOrc_17
+  - first:
+      213: 5023106418222868718
+    second: HunterOrc_18
+  - first:
+      213: 227555799148795196
+    second: HunterOrc_19
+  - first:
+      213: -8864900693762249551
+    second: HunterOrc_20
+  - first:
+      213: -6926385966581827719
+    second: HunterOrc_21
+  - first:
+      213: 6996759825239101522
+    second: HunterOrc_22
+  - first:
+      213: -3940876305072918965
+    second: HunterOrc_23
+  - first:
+      213: 6007355196135369584
+    second: HunterOrc_24
+  - first:
+      213: 8150534167905918401
+    second: HunterOrc_25
+  - first:
+      213: 2888941170508154658
+    second: HunterOrc_26
+  - first:
+      213: 7052253433993798774
+    second: HunterOrc_27
+  - first:
+      213: -6374211374977829752
+    second: HunterOrc_28
+  - first:
+      213: 7160559818254926585
+    second: HunterOrc_29
+  - first:
+      213: -6994435454187669463
+    second: HunterOrc_30
+  - first:
+      213: -1975528976487999102
+    second: HunterOrc_31
+  - first:
+      213: 1876513244914146648
+    second: HunterOrc_32
+  - first:
+      213: -3675357714651202331
+    second: HunterOrc_33
+  - first:
+      213: 7571023990280552864
+    second: HunterOrc_34
+  - first:
+      213: 8370475504832742575
+    second: HunterOrc_35
+  - first:
+      213: -7245009693120084947
+    second: HunterOrc_36
+  - first:
+      213: 3922671472011975090
+    second: HunterOrc_37
+  - first:
+      213: 5599744212550989736
+    second: HunterOrc_38
+  - first:
+      213: 6930627897120021895
+    second: HunterOrc_39
+  - first:
+      213: -4437098193239566989
+    second: HunterOrc_40
+  - first:
+      213: 4455302974881002692
+    second: HunterOrc_41
+  - first:
+      213: 3883475710884673936
+    second: HunterOrc_42
+  - first:
+      213: 6680366074447847924
+    second: HunterOrc_43
+  - first:
+      213: 940137267276118608
+    second: HunterOrc_44
+  - first:
+      213: 6529328398850338186
+    second: HunterOrc_45
+  - first:
+      213: -4635687549602215703
+    second: HunterOrc_46
+  - first:
+      213: -1495357931189341141
+    second: HunterOrc_47
+  - first:
+      213: -6005938284169530591
+    second: HunterOrc_48
+  - first:
+      213: 4412410694991241420
+    second: HunterOrc_49
+  - first:
+      213: 8082611543920590896
+    second: HunterOrc_50
+  - first:
+      213: -4158465735827915597
+    second: HunterOrc_51
+  - first:
+      213: 7838414994768464194
+    second: HunterOrc_52
+  - first:
+      213: 7398084440594310988
+    second: HunterOrc_53
+  - first:
+      213: 32221749576642053
+    second: HunterOrc_54
+  - first:
+      213: -8321355217031020525
+    second: HunterOrc_55
+  - first:
+      213: 5025182655053941516
+    second: HunterOrc_56
+  - first:
+      213: 1327390436746432522
+    second: HunterOrc_57
+  - first:
+      213: -7323863082451603315
+    second: HunterOrc_58
+  - first:
+      213: -4335286990237344764
+    second: HunterOrc_59
+  - first:
+      213: 4381190940792463670
+    second: HunterOrc_60
+  - first:
+      213: -2142955549426305474
+    second: HunterOrc_61
+  - first:
+      213: -9059160330653370961
+    second: HunterOrc_62
+  - first:
+      213: 602081053558192409
+    second: HunterOrc_63
+  - first:
+      213: 4021776550614520045
+    second: HunterOrc_64
+  - first:
+      213: 1721804080572360655
+    second: HunterOrc_65
+  - first:
+      213: -4192383680357627856
+    second: HunterOrc_66
+  - first:
+      213: 8170789512158944140
+    second: HunterOrc_67
+  - first:
+      213: 1078185359021853701
+    second: HunterOrc_68
+  - first:
+      213: 5647214011052071603
+    second: HunterOrc_69
+  - first:
+      213: -4676294237248375202
+    second: HunterOrc_70
+  - first:
+      213: -504417074371706136
+    second: HunterOrc_71
+  - first:
+      213: -3153326688364708618
+    second: HunterOrc_72
+  - first:
+      213: -4304245414748389525
+    second: HunterOrc_73
+  - first:
+      213: -8688324698292423596
+    second: HunterOrc_74
+  - first:
+      213: 6283300519896284607
+    second: HunterOrc_75
+  - first:
+      213: -4480815103204717691
+    second: HunterOrc_76
+  - first:
+      213: 7006045708318061010
+    second: HunterOrc_77
+  - first:
+      213: -1721617667810300926
+    second: HunterOrc_78
+  - first:
+      213: 8643598725298709854
+    second: HunterOrc_79
+  - first:
+      213: 5494683040824257603
+    second: HunterOrc_80
+  - first:
+      213: -4211992732255227749
+    second: HunterOrc_81
+  - first:
+      213: -7829877177357636129
+    second: HunterOrc_82
+  - first:
+      213: 851865935500333301
+    second: HunterOrc_83
+  - first:
+      213: 8163792678559541731
+    second: HunterOrc_84
+  - first:
+      213: -1010779615607059722
+    second: HunterOrc_85
+  - first:
+      213: 5623055324543008874
+    second: HunterOrc_86
+  - first:
+      213: -6844537139251789598
+    second: HunterOrc_87
+  - first:
+      213: 7226957223590873550
+    second: HunterOrc_88
+  - first:
+      213: -4962052823764572674
+    second: HunterOrc_89
+  - first:
+      213: 4621169278822310226
+    second: HunterOrc_90
+  - first:
+      213: -1783420880527658090
+    second: HunterOrc_91
+  - first:
+      213: -4969227706656218200
+    second: HunterOrc_92
+  - first:
+      213: 5676739249593077534
+    second: HunterOrc_93
+  - first:
+      213: 8052676258166886623
+    second: HunterOrc_94
+  - first:
+      213: 8055815872474039652
+    second: HunterOrc_95
+  - first:
+      213: -5713483521309773534
+    second: HunterOrc_96
+  - first:
+      213: 7978975073198379309
+    second: HunterOrc_97
+  - first:
+      213: 1791314075517353054
+    second: HunterOrc_98
+  - first:
+      213: -636154923468238237
+    second: HunterOrc_99
+  - first:
+      213: 2043687106130769034
+    second: HunterOrc_100
+  - first:
+      213: -8576916590699765129
+    second: HunterOrc_101
+  - first:
+      213: 5227689822483720207
+    second: HunterOrc_102
+  - first:
+      213: 951286703895842063
+    second: HunterOrc_103
+  - first:
+      213: 1958958012923671137
+    second: HunterOrc_104
+  - first:
+      213: 3637541244320187476
+    second: HunterOrc_105
+  - first:
+      213: -2213889119051311332
+    second: HunterOrc_106
+  - first:
+      213: -6636180957187745773
+    second: HunterOrc_107
+  - first:
+      213: 5942353598392503832
+    second: HunterOrc_108
+  - first:
+      213: 8334654049791987804
+    second: HunterOrc_109
+  - first:
+      213: -1819485473044476050
+    second: HunterOrc_110
+  - first:
+      213: 4451208062230958938
+    second: HunterOrc_111
+  - first:
+      213: 2042121188374255951
+    second: HunterOrc_112
+  - first:
+      213: -6222705304202183007
+    second: HunterOrc_113
+  - first:
+      213: 319469526770411939
+    second: HunterOrc_114
+  - first:
+      213: -6435367193163765682
+    second: HunterOrc_115
+  - first:
+      213: 4718842279859528605
+    second: HunterOrc_116
+  - first:
+      213: -5715100216724517458
+    second: HunterOrc_117
+  - first:
+      213: -4131632853058974265
+    second: HunterOrc_118
+  - first:
+      213: 6953970273245641630
+    second: HunterOrc_119
+  - first:
+      213: 9179387833912558908
+    second: HunterOrc_120
+  - first:
+      213: 7503621982542104360
+    second: HunterOrc_121
+  - first:
+      213: 7317868093488217680
+    second: HunterOrc_122
+  - first:
+      213: 8174219316479103416
+    second: HunterOrc_123
+  - first:
+      213: -4017411220464165747
+    second: HunterOrc_124
+  - first:
+      213: 1262335751119024009
+    second: HunterOrc_125
+  - first:
+      213: 4724640989502956872
+    second: HunterOrc_126
+  - first:
+      213: -5254709135083658982
+    second: HunterOrc_127
+  - first:
+      213: 2125158569358183299
+    second: HunterOrc_128
+  - first:
+      213: 827138631751761419
+    second: HunterOrc_129
+  - first:
+      213: 8320903753716705938
+    second: HunterOrc_130
+  - first:
+      213: 3397845979939884912
+    second: HunterOrc_131
+  - first:
+      213: 8094118596367315614
+    second: HunterOrc_132
+  - first:
+      213: -3685934755401193875
+    second: HunterOrc_133
+  - first:
+      213: -7786773122661150436
+    second: HunterOrc_134
+  - first:
+      213: 3395356710304848459
+    second: HunterOrc_135
+  - first:
+      213: 6504184729025437729
+    second: HunterOrc_136
+  - first:
+      213: 168083026498844014
+    second: HunterOrc_137
+  - first:
+      213: 2995357481605177403
+    second: HunterOrc_138
+  - first:
+      213: -3412899027617882541
+    second: HunterOrc_139
+  - first:
+      213: 1603439715898205433
+    second: HunterOrc_140
+  - first:
+      213: 933321617381640822
+    second: HunterOrc_141
+  - first:
+      213: -1800028730972303343
+    second: HunterOrc_142
+  - first:
+      213: -2186645251932118425
+    second: HunterOrc_143
+  - first:
+      213: -5044119115741276161
+    second: HunterOrc_144
+  - first:
+      213: -4226987206426572634
+    second: HunterOrc_145
+  - first:
+      213: -7211918827474290512
+    second: HunterOrc_146
+  - first:
+      213: -4677044296401129641
+    second: HunterOrc_147
+  - first:
+      213: 4603535277407986625
+    second: HunterOrc_148
+  - first:
+      213: -4820548252682511606
+    second: HunterOrc_149
+  - first:
+      213: -5397667440186147772
+    second: HunterOrc_150
+  - first:
+      213: -770943589010202439
+    second: HunterOrc_151
+  - first:
+      213: 81579325564412956
+    second: HunterOrc_152
+  - first:
+      213: 6413777012140576877
+    second: HunterOrc_153
+  - first:
+      213: 7676983950736015201
+    second: HunterOrc_154
+  - first:
+      213: -8832657433490447240
+    second: HunterOrc_155
+  - first:
+      213: 8779282833131968443
+    second: HunterOrc_156
+  - first:
+      213: 8046225097825954666
+    second: HunterOrc_157
+  - first:
+      213: 3693720909875700218
+    second: HunterOrc_158
+  - first:
+      213: 5404287706674274279
+    second: HunterOrc_159
+  - first:
+      213: 7021889300350749283
+    second: HunterOrc_160
+  - first:
+      213: -1094910218929692308
+    second: HunterOrc_161
+  - first:
+      213: 3119301860387492898
+    second: HunterOrc_162
+  - first:
+      213: 2572562588977214347
+    second: HunterOrc_163
+  - first:
+      213: -748657620797662763
+    second: HunterOrc_164
+  - first:
+      213: 5147145900264528955
+    second: HunterOrc_165
+  - first:
+      213: -6018353499398465868
+    second: HunterOrc_166
+  - first:
+      213: 5515622905232085680
+    second: HunterOrc_167
+  - first:
+      213: 2773072714723135977
+    second: HunterOrc_168
+  - first:
+      213: 6751353417658650927
+    second: HunterOrc_169
+  - first:
+      213: 8733330650551725876
+    second: HunterOrc_170
+  - first:
+      213: -6766580333570627415
+    second: HunterOrc_171
+  - first:
+      213: -3608956345896156386
+    second: HunterOrc_172
+  - first:
+      213: -8403763753262403341
+    second: HunterOrc_173
+  - first:
+      213: -4698773476898895152
+    second: HunterOrc_174
+  - first:
+      213: -79289138495331108
+    second: HunterOrc_175
+  - first:
+      213: 4378456863733333726
+    second: HunterOrc_176
+  - first:
+      213: 3952104327478411419
+    second: HunterOrc_177
+  - first:
+      213: -2895699748327496941
+    second: HunterOrc_178
+  - first:
+      213: 9217465425243426140
+    second: HunterOrc_179
+  - first:
+      213: 5180476107842673232
+    second: HunterOrc_180
+  - first:
+      213: 2753233233775850911
+    second: HunterOrc_181
+  - first:
+      213: 8111305713162858800
+    second: HunterOrc_182
+  - first:
+      213: 6713175749818006022
+    second: HunterOrc_183
+  - first:
+      213: 7110985240818119129
+    second: HunterOrc_184
+  - first:
+      213: -810186417136726012
+    second: HunterOrc_185
+  - first:
+      213: -1053407586560363962
+    second: HunterOrc_186
+  - first:
+      213: -6360082289102323439
+    second: HunterOrc_187
+  - first:
+      213: 3648043845613635691
+    second: HunterOrc_188
+  - first:
+      213: -3845809347313179478
+    second: HunterOrc_189
+  - first:
+      213: -1950872354934113079
+    second: HunterOrc_190
+  - first:
+      213: 1104599346833579631
+    second: HunterOrc_191
+  - first:
+      213: 5500560584994490256
+    second: HunterOrc_192
+  - first:
+      213: 3997286102447247820
+    second: HunterOrc_193
+  - first:
+      213: 1358072722613810868
+    second: HunterOrc_194
+  - first:
+      213: -8319317908577010107
+    second: HunterOrc_195
+  - first:
+      213: 2136569791767814059
+    second: HunterOrc_196
+  - first:
+      213: -7957876113104361129
+    second: HunterOrc_197
+  - first:
+      213: 1522800953923845229
+    second: HunterOrc_198
+  - first:
+      213: -3629855749477772693
+    second: HunterOrc_199
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -31,27 +721,27 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -71,13 +761,1087 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HunterOrc_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cdcb3c194f15a30800000000000000
+      internalID: 4202408834204752919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3116385c066c592c0800000000000000
+      internalID: -4425412939888762605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c80f14dbf7bfb4f0800000000000000
+      internalID: -810727115679921978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cfb136745a832a0800000000000000
+      internalID: -6757469514845389676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0088b47093d0d2b30800000000000000
+      internalID: 4264078960776415232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de419cfb709fda950800000000000000
+      internalID: 6462094852024243437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9ddd4091a079bd0800000000000000
+      internalID: -2623617155347916339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55961f3c6487c6670800000000000000
+      internalID: 8533327639290669397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f3399d692204ce0800000000000000
+      internalID: -1423099450958332130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b270cb2db6264e510800000000000000
+      internalID: 1577493984723076907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c771db2f86eb30e10800000000000000
+      internalID: 2162781604026324860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbf419f842948770800000000000000
+      internalID: 8612169229553433594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e353e3fdb36b0e690800000000000000
+      internalID: -7574854204972452546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6e2acf40e380610800000000000000
+      internalID: 1587587059787425481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16efc22031f5f26d0800000000000000
+      internalID: -3013085090442051999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_15
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d345f859a9966c0800000000000000
+      internalID: -4149615614499734217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d241990c9874760800000000000000
+      internalID: 7442068369547996474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_17
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6780559e423591300800000000000000
+      internalID: 223301074530142326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8a82f7ca8a5b540800000000000000
+      internalID: 5023106418222868718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3518de2bc0782300800000000000000
+      internalID: 227555799148795196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bcef2b89cb89f480800000000000000
+      internalID: -8864900693762249551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977b3a439a880ef90800000000000000
+      internalID: -6926385966581827719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250d91a9dfb791160800000000000000
+      internalID: 6996759825239101522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4eef5451e13f49c0800000000000000
+      internalID: -3940876305072918965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07bee39f8b96e5350800000000000000
+      internalID: 6007355196135369584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd57bf64a38c1170800000000000000
+      internalID: 8150534167905918401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227c32530b4971820800000000000000
+      internalID: 2888941170508154658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_27
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674aa3f3223aed160800000000000000
+      internalID: 7052253433993798774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8843137c6804a87a0800000000000000
+      internalID: -6374211374977829752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_29
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f24508673b6f5360800000000000000
+      internalID: 7160559818254926585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928feb43306ceee90800000000000000
+      internalID: -6994435454187669463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_31
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28911f8dcd28594e0800000000000000
+      internalID: -1975528976487999102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_32
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d5c63aad6ba0a10800000000000000
+      internalID: 1876513244914146648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_33
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec39b3a1a18efcc0800000000000000
+      internalID: -3675357714651202331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a102a6c43ea11960800000000000000
+      internalID: 7571023990280552864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa40aaa7f17e92470800000000000000
+      internalID: 8370475504832742575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24c05fd11e847b90800000000000000
+      internalID: -7245009693120084947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_37
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b915dbabe0207630800000000000000
+      internalID: 3922671472011975090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_38
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7b62e41b946bd40800000000000000
+      internalID: 5599744212550989736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_39
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d50463a598e2060800000000000000
+      internalID: 6930627897120021895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3759d66b3b24c62c0800000000000000
+      internalID: -4437098193239566989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_41
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4f580537a64dd30800000000000000
+      internalID: 4455302974881002692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_42
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09973216590e4e530800000000000000
+      internalID: 3883475710884673936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_43
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1e805fc8d65bc50800000000000000
+      internalID: 6680366074447847924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_44
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a79101dd90c0d00800000000000000
+      internalID: 940137267276118608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_45
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d285bb595dc9a50800000000000000
+      internalID: 6529328398850338186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_46
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8424c0cbabaafb0800000000000000
+      internalID: -4635687549602215703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_47
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24756362eb6f3be0800000000000000
+      internalID: -1495357931189341141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_48
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123f72d83fe96aca0800000000000000
+      internalID: -6005938284169530591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HunterOrc_49
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc0661e26280c3d30800000000000000
+      internalID: 4412410694991241420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

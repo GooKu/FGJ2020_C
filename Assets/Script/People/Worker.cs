@@ -8,17 +8,17 @@ public class Worker : People
 
     private void Start()
     {
-        ObjectPools.Intance.RenderObjectPoolsInParent(building, 50);
+        //ObjectPools.Intance.RenderObjectPoolsInParent(building, 50);
     }
 
     protected override void DetectPlayer(float detectRadius)
     {
         base.DetectPlayer(detectRadius);
-        Debug.Log($"worker{ player }");
 
-        if (player != null && player.gameObject.CompareTag("Player"))
+        if (player != null)
         {
             RunAway();
+            Debug.Log($"worker{ player }");
         }
         else
         {
