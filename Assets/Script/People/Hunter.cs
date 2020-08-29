@@ -16,7 +16,7 @@ public class Hunter : People
         base.DetectPlayer(detectRadius);
         Debug.Log($"hunter{ player }" );
 
-        if (player != null && player.gameObject.CompareTag("Player"))
+        if (player != null)
         {
             ChaseTarget(player.transform, moveSpeed);
         }
