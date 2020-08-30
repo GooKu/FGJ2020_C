@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterMnager : MonoBehaviour
@@ -11,12 +10,41 @@ public class CharacterMnager : MonoBehaviour
 
     private void Start()
     {
+        EventManager.AddListen(GameEvents.GameOver, Stop);
+
         GameObject.Instantiate(workerSample, GetBirthPoint(), Quaternion.identity);
 
         var wayPoints = GameObject.FindGameObjectsWithTag("WayPoint");
 
         GameObject.Instantiate(hunterSample, GetBirthPoint(), Quaternion.identity)
             .GetComponent<Hunter>().Init(wayPoints);
+
+        StartCoroutine(GenWorker());
+    }
+
+    private IEnumerator GenWorker()
+    {
+        do
+        {
+            var waitTime = Random.Range(3f, 5f);
+
+            yield return new WaitForSeconds(waitTime);
+
+            if (enabled)
+            {
+                GameObject.Instantiate(workerSample, GetBirthPoint(), Quaternion.identity);
+            }
+        } while (enabled);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.RemoveListen(GameEvents.GameOver, Stop);
+    }
+
+    private void Stop(object[] callBack)
+    {
+        enabled = false;
     }
 
     private Vector3 GetBirthPoint()
