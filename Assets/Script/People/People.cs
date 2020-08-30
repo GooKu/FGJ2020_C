@@ -9,6 +9,8 @@ public abstract class People : MonoBehaviour
     protected BearController playerController;
     protected GameMapManager mapManager;
     [SerializeField] protected Sprite deathSprite;
+    [SerializeField] protected AudioSource source;
+    [SerializeField] protected AudioClip[] peopleSounds; 
 
     [SerializeField] protected float detectRadius;
     [SerializeField] protected float moveSpeed;
@@ -17,6 +19,7 @@ public abstract class People : MonoBehaviour
     {
         playerController = (BearController)FindObjectOfType(typeof(BearController));
         mapManager = (GameMapManager)FindObjectOfType(typeof(GameMapManager));
+        source = GetComponent<AudioSource>();
     }
 
     public void Update()

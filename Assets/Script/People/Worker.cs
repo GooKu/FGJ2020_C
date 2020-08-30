@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +21,6 @@ public class Worker : People
 
     private void Start()
     {
-        //ObjectPools.Intance.RenderObjectPoolsInParent(building, 50);
         curState = WorkerState.Idle;
     }
 
@@ -43,13 +43,14 @@ public class Worker : People
     private void RunAway()
     {
         curState = WorkerState.Running;
+        source.Play();
         Vector3 runDir = (transform.position - player.transform.position).normalized;
         transform.position -= -runDir * moveSpeed * Time.deltaTime;
     }
 
     private void DropC4()
     {
-        int ran = Random.Range(0, 300);
+        int ran = UnityEngine.Random.Range(0, 300);
         if (ran == 0)
             Instantiate(C4, transform.position, Quaternion.identity);
     }
@@ -61,7 +62,7 @@ public class Worker : People
         
         if(curState == WorkerState.LockTree)
         {
-            int chance = Random.Range(0, mapManager.m_listMapItems.Count);      //隨機樹
+            int chance = UnityEngine.Random.Range(0, mapManager.m_listMapItems.Count);      //隨機樹
             item = mapManager.m_listMapItems[chance];
             curState = WorkerState.CutingDownTree;
         }
