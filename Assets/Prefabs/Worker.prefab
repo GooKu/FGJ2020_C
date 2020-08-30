@@ -100,4 +100,4 @@ MonoBehaviour:
   deathSprite: {fileID: 21300000, guid: 91ec9c4d8bd5cc546b353a8dd4811a83, type: 3}
   detectRadius: 5
   moveSpeed: 3
-  curState: 0
+  C4: {fileID: 4963615141095241277, guid: b5295bc4ee2f1ab40816c7c7ccd73260, type: 3}

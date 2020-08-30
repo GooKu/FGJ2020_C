@@ -13,9 +13,10 @@ public class Worker : People
         Running
     }
 
-    [SerializeField] private WorkerState curState;
+    private WorkerState curState;
 
     private MapItem item;
+    [SerializeField] private GameObject C4;
 
     private void Start()
     {
@@ -30,6 +31,8 @@ public class Worker : People
         if (player != null)
         {
             RunAway();
+            if (curState == WorkerState.Running)
+                DropC4();
         }
         else
         {
@@ -46,7 +49,9 @@ public class Worker : People
 
     private void DropC4()
     {
-
+        int ran = Random.Range(0, 120);
+        if (ran == 0)
+            Instantiate(C4, transform.position, Quaternion.identity);
     }
 
     private void Build()
