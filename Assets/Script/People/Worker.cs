@@ -13,9 +13,10 @@ public class Worker : People
         Running
     }
 
-    [SerializeField] private WorkerState curState;
+    private WorkerState curState;
 
     private MapItem item;
+    [SerializeField] private GameObject C4;
 
     private void Start()
     {
@@ -30,6 +31,8 @@ public class Worker : People
         if (player != null)
         {
             RunAway();
+            if (curState == WorkerState.Running)
+                DropC4();
         }
         else
         {
@@ -42,6 +45,13 @@ public class Worker : People
         curState = WorkerState.Running;
         Vector3 runDir = (transform.position - player.transform.position).normalized;
         transform.position -= -runDir * moveSpeed * Time.deltaTime;
+    }
+
+    private void DropC4()
+    {
+        int ran = Random.Range(0, 120);
+        if (ran == 0)
+            Instantiate(C4, transform.position, Quaternion.identity);
     }
 
     private void Build()
@@ -69,22 +79,24 @@ public class Worker : People
         //build
         if(curState == WorkerState.Building)
         {
-            StartCoroutine(BuildHouse());
+            if(item.type == MapItemType.PINE_ROOT)
+                mapManager.ChangeMapItem(transform.position, MapItemType.HOUSE_HALF, .01f);
+            else if(item.type == MapItemType.HOUSE_HALF)
+                StartCoroutine(BuildHouse());
         }
     }
-
 
      private IEnumerator CutDownTree(MapItem item)
      {
         yield return new WaitForSeconds(3f);
-        mapManager.ChangeMapItem(transform.position, MapItemType.PINE_ROOT, .2f);  //cut down tree
+        if (item.type != MapItemType.PINE_ROOT && item.type != MapItemType.HOUSE_HALF)
+            mapManager.ChangeMapItem(transform.position, MapItemType.PINE_ROOT, .2f);  //cut down tree
         curState = WorkerState.Building;
         yield break;
     }
 
     private IEnumerator BuildHouse()
     {
-        mapManager.ChangeMapItem(transform.position, MapItemType.HOUSE_HALF, .01f);
         yield return new WaitForSeconds(3f);
         mapManager.ChangeMapItem(transform.position, MapItemType.HOUSE_COMP, .01f);
         curState = WorkerState.Idle;

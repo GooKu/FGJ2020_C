@@ -474,6 +474,7 @@ public class GameMapManager : MonoBehaviour
                 }
                 UpdateMapResultEnd((int)m_mapStages[idx][item.y, item.x], (int)type);
                 m_mapStages[idx][item.y, item.x] = (int)type;
+                item.type = type;
                 // break; // remove first item only.
             }
         }        
