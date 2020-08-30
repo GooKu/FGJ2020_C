@@ -22,8 +22,11 @@ public class Hunter : People
 
         if (player != null)
         {
-            
-            ChaseTarget(player.transform, moveSpeed);
+            source.clip = peopleSounds[2];
+            source.Play();
+            if (!playerController.IsStealth)
+                ChaseTarget(player.transform, moveSpeed);
+            Patrol();
         }
         else
         {
@@ -35,11 +38,7 @@ public class Hunter : People
 
     private void ChaseTarget(Transform target, float moveSpeed)
     {
-        if (playerController.IsStealth)
-            return;
-
-        source.clip = peopleSounds[2];
-        source.Play();
+        
         float dist = (transform.position - target.position).sqrMagnitude;
 
         if (dist <= shootRadius * shootRadius)
