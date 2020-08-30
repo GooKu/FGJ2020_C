@@ -19,14 +19,14 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.O))
         {
             if (bear.IsGetC4) { return; }
             bear.Stealth();
-        }else if (Input.GetKeyUp(KeyCode.E))
+        }else if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.O))
         {
             bear.CancelStealth();
-        }else if (Input.GetKeyDown(KeyCode.Q))
+        }else if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.P))
         {
             if (bear.IsStealth) { return; }
 
