@@ -64,6 +64,8 @@ public class Bomb : MonoBehaviour
             }
         }
 
+        GameObject.FindObjectOfType<GameMapManager>().DestoryMapItem(transform.position, checkRadiusSpr);
+
         GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
         EventManager.SendEvent(GameEvents.BombExplsion);
 
