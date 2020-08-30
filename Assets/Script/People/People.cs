@@ -37,9 +37,10 @@ public abstract class People : MonoBehaviour
         }
     }
 
-    protected void PeopleStop(object[] callback)
+    protected virtual void PeopleStop(object[] callback)
     {
-        enabled = false;
+        if(this != null)
+            enabled = false;
     }
 
     public virtual void Die()

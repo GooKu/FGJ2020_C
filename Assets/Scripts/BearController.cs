@@ -11,6 +11,8 @@ public class BearController : MonoBehaviour
     [SerializeField]
     private GameObject tree = null;
 
+
+
     private SpriteRenderer spriteRenderer;
 
     private Vector3 moveVect = Vector3.zero;
@@ -93,24 +95,24 @@ public class BearController : MonoBehaviour
         if(moveVect == Vector3.zero) { return; }
 
         var newPos = transform.position + moveVect * moveSpeed * Time.fixedDeltaTime;
-
-        if(newPos.x > 6.3f)
+        
+        if(newPos.x > 7.7f)
         {
-            newPos.x = 6.3f;
-        }else if(newPos.x < -6.8f)
+            newPos.x = 7.7f;
+        }else if(newPos.x < -7.5f)
         {
-            newPos.x = -6.8f;
+            newPos.x = -7.5f;
         }
 
-        if (newPos.y > 5.7f)
+        if (newPos.y > 6.6f)
         {
-            newPos.y = 5.7f;
+            newPos.y = 6.6f;
         }
-        else if (newPos.y < -3.4f)
+        else if (newPos.y < -4.6f)
         {
-            newPos.y = -3.4f;
+            newPos.y = -4.6f;
         }
-
+        
         transform.position = newPos;
     }
 
