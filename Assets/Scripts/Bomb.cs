@@ -39,6 +39,7 @@ public class Bomb : MonoBehaviour
             SetBar(countDownTime / countDownTimeMax);
         } while (countDownTime > 0);
 
+        var checkRadiusSpr = bombRadius * bombRadius;
 
         var bear = GameObject.FindObjectOfType<BearController>();
 
@@ -46,9 +47,21 @@ public class Bomb : MonoBehaviour
 
 //        Debug.Log($"{bear.transform.position}, {transform.position}, {dis}, {(dis.x * dis.x + dis.y * dis.y)}");
 
-        if((dis.x * dis.x + dis.y * dis.y) <= bombRadius * bombRadius)
+        if((dis.x * dis.x + dis.y * dis.y) <= checkRadiusSpr)
         {
             bear.Death();
+        }
+
+        var humans = GameObject.FindObjectsOfType<People>();
+
+        foreach(var human in humans)
+        {
+            dis = human.transform.position - transform.position;
+
+            if ((dis.x * dis.x + dis.y * dis.y) <= checkRadiusSpr)
+            {
+                human.Die();
+            }
         }
 
         GameObject.Instantiate(explosion, transform.position, Quaternion.identity);

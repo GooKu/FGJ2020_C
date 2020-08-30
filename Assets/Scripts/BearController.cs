@@ -8,6 +8,8 @@ public class BearController : MonoBehaviour
     private float moveSpeed = 5;
     [SerializeField]
     private Sprite bear = null;
+    [SerializeField]
+    private GameObject tree = null;
 
     private SpriteRenderer spriteRenderer;
 
@@ -59,12 +61,13 @@ public class BearController : MonoBehaviour
     public void Stealth()
     {
         IsStealth = true;
+        tree.SetActive(true);
         Stop();
     }
     public void CancelStealth()
     {
         IsStealth = false;
-        //TODO: showing
+        tree.SetActive(false);
     }
 
     public void Pick()
