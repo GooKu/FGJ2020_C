@@ -69,22 +69,24 @@ public class Worker : People
         //build
         if(curState == WorkerState.Building)
         {
-            StartCoroutine(BuildHouse());
+            if(item.type == MapItemType.PINE_ROOT)
+                mapManager.ChangeMapItem(transform.position, MapItemType.HOUSE_HALF, .01f);
+            else if(item.type == MapItemType.HOUSE_HALF)
+                StartCoroutine(BuildHouse());
         }
     }
-
 
      private IEnumerator CutDownTree(MapItem item)
      {
         yield return new WaitForSeconds(3f);
-        mapManager.ChangeMapItem(transform.position, MapItemType.PINE_ROOT, .2f);  //cut down tree
+        if (item.type != MapItemType.PINE_ROOT && item.type != MapItemType.HOUSE_HALF)
+            mapManager.ChangeMapItem(transform.position, MapItemType.PINE_ROOT, .2f);  //cut down tree
         curState = WorkerState.Building;
         yield break;
     }
 
     private IEnumerator BuildHouse()
     {
-        mapManager.ChangeMapItem(transform.position, MapItemType.HOUSE_HALF, .01f);
         yield return new WaitForSeconds(3f);
         mapManager.ChangeMapItem(transform.position, MapItemType.HOUSE_COMP, .01f);
         curState = WorkerState.Idle;
