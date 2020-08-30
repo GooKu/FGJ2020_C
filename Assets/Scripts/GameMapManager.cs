@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public enum MapItemType
@@ -8,10 +6,11 @@ public enum MapItemType
     NONE,
     PINE_TREE,
     PINE_ROOT,
-
-
+    HOUSE_HALF,
+    HOUSE_COMP,
+    TREE_Y,
+    TREE_L,
     MAX
-    
 }
 
 public class MapItem
@@ -43,31 +42,31 @@ public class GameMapManager : MonoBehaviour
     private int[,] mapStage0 = new int[map_y_max, map_x_max] {
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
-        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
-        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
-        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
-
-        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
-        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
-        {0,0,0,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
+        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
 
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
-        {0,0,0,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
+        {0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,1,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
 
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
-        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
+        {0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
 
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
+        {0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,1,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
+        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
+
+        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
+        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0},
+        {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,0,0,0, 0,0},
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0}
     }; // 32 x 24 (1024 x 768)
 
@@ -99,9 +98,6 @@ public class GameMapManager : MonoBehaviour
     };
 
     private List<int[,]> m_mapStages = new List<int[,]>();
-
-
-
     private List<MapItem> m_listMapItems = new List<MapItem>();
     private List<MapItem> m_listMapGrass = new List<MapItem>();
 
@@ -162,17 +158,18 @@ public class GameMapManager : MonoBehaviour
         
     }
 
-
-    private int inner_delay = 60;
+    private const int inner_delay_max = 120;
+    private int inner_delay = inner_delay_max;
     private void Update()
     {
         // SlimeTest();
+        SlimeTest2();
     }
 
     private void SlimeTest()
     {
         if (--inner_delay <= 0) {
-            inner_delay = 60;
+            inner_delay = inner_delay_max;
             var x = rnd.Next(0, map_x_max);
             var y = rnd.Next(0, map_y_max);
             var n = 0.5f;
@@ -185,6 +182,24 @@ public class GameMapManager : MonoBehaviour
             // ChangeMapItem(pos, MapItemType.PINE_ROOT, 3.0f);
         }
     }
+
+    private float test_range = 0.0f;
+    private void SlimeTest2()
+    {
+        if (--inner_delay <= 0) {
+            inner_delay = inner_delay_max;
+            var x = 8;
+            var y = 8;
+            var n = 0.5f;
+            var odd = 0.25f;
+            float pos_x = -8.0f + (x * n) + ((y%2) == 1 ? odd : 0f);
+            float pos_y = 7.0f + (-y * n);
+            var pos = new Vector3(pos_x, pos_y, 0);
+            test_range += 0.01f;
+            ChangeMapItem(pos, MapItemType.PINE_ROOT, test_range);
+        }
+    }
+
 
     private string GetMapInstBy(int number)
     {
@@ -248,7 +263,38 @@ public class GameMapManager : MonoBehaviour
         }
     }
 
-    public void ChangeMapItem(Vector3 pos, MapItemType type, float range = 5.0f) // , int x, int y)
+    private string GetSpriteNameBy(MapItemType type)
+    {
+        switch (type)
+        {
+            case MapItemType.NONE:
+                return "Textures/pine_tree_example_00";
+                break;
+            case MapItemType.PINE_TREE:
+                return "Textures/pine_tree_example_01";
+                break;
+            case MapItemType.PINE_ROOT:
+                return "Textures/pine_tree_example_02";
+                break;
+            case MapItemType.HOUSE_HALF:
+                return "Textures/pine_tree_example_03";
+                break;
+            case MapItemType.HOUSE_COMP:
+                return "Textures/pine_tree_example_04";
+                break;
+            case MapItemType.TREE_Y:
+                return "Textures/pine_tree_example_05";
+                break;
+            case MapItemType.TREE_L:
+                return "Textures/pine_tree_example_06";
+                break;
+            default:
+                return "Textures/pine_tree_example_00";
+                break;
+        }
+    }
+
+    public void ChangeMapItem(Vector3 pos, MapItemType type, float range = 1.0f) // , int x, int y)
     {
         var idx = 1;
         foreach (var item in m_listMapItems) {
@@ -257,10 +303,10 @@ public class GameMapManager : MonoBehaviour
             if (dist < range) {
                 var spriteRenderer = item.go.GetComponent<SpriteRenderer>();
                 if (spriteRenderer) {
-                    spriteRenderer.sprite = CreateSprite("Textures/pine_tree_example_02");
+                    spriteRenderer.sprite = CreateSprite(GetSpriteNameBy(type));
                 }
                 m_mapStages[idx][item.y, item.x] = (int)type;
-                break;
+                // break; // remove first item only.
             }
         }        
     }
