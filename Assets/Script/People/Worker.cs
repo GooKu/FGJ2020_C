@@ -47,6 +47,8 @@ public class Worker : People
 
     private void RunAway()
     {
+        if (playerController.IsStealth)
+            return;
         curState = WorkerState.Running;
         source.Play();
         Vector3 runDir = (transform.position - player.transform.position).normalized;
