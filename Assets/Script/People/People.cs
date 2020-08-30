@@ -22,6 +22,9 @@ public abstract class People : MonoBehaviour
     public void Update()
     {
         DetectPlayer(detectRadius);
+
+        EventManager.AddListen(GameEvents.GameOver, PeopleStop);
+        EventManager.AddListen(GameEvents.GameEnd, PeopleStop);
     }
 
     protected virtual void DetectPlayer(float detectRadius)
@@ -34,6 +37,11 @@ public abstract class People : MonoBehaviour
         }
     }
 
+    protected void PeopleStop(object[] callback)
+    {
+        enabled = false;
+    }
+
     public virtual void Die()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = deathSprite;
@@ -43,5 +51,11 @@ public abstract class People : MonoBehaviour
     {
         Gizmos.color = GetComponent<SpriteRenderer>().color;
         Gizmos.DrawWireSphere(gameObject.transform.position, detectRadius);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.RemoveListen(GameEvents.GameOver, PeopleStop);
+        EventManager.RemoveListen(GameEvents.GameEnd, PeopleStop);
     }
 }
