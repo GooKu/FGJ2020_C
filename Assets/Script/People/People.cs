@@ -33,6 +33,11 @@ public abstract class People : MonoBehaviour
         }
     }
 
+    public virtual void Die()
+    {
+
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = GetComponent<SpriteRenderer>().color;

@@ -97,8 +97,8 @@ public class GameMapManager : MonoBehaviour
         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
     };
 
-    private List<int[,]> m_mapStages = new List<int[,]>();
-    private List<MapItem> m_listMapItems = new List<MapItem>();
+    public List<int[,]> m_mapStages = new List<int[,]>();
+    public List<MapItem> m_listMapItems = new List<MapItem>();
     private List<MapItem> m_listMapGrass = new List<MapItem>();
 
     private System.Random rnd;

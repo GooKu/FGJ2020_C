@@ -977,6 +977,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hunter
       objectReference: {fileID: 0}
+    - target: {fileID: 5591380036130590564, guid: e31abfb0293d3494299fccecb9dd75de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5591380036130590569, guid: e31abfb0293d3494299fccecb9dd75de,
         type: 3}
       propertyPath: wayPoints.Array.data[0]

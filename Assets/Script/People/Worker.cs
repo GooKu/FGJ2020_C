@@ -31,13 +31,22 @@ public class Worker : People
         transform.position -= -runDir * moveSpeed * Time.deltaTime;
     }
 
-    private void CutDownTree()
-    {
-        mapManager.ChangeMapItem(transform.position, MapItemType.PINE_ROOT);
-    }
-
     private void Build()
     {
+        //find tree 
+        foreach(MapItem item in mapManager.m_listMapItems)
+        {
+            int chance = Random.Range(0, 5);      //砍這棵樹機率
+            if ((item.type == MapItemType.PINE_TREE || item.type == MapItemType.TREE_L || item.type == MapItemType.TREE_Y) && chance == 0)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, item.go.transform.position, moveSpeed * Time.deltaTime);
+                mapManager.ChangeMapItem(transform.position, MapItemType.PINE_ROOT, .2f);  //cut down tree
+            }
+        }
+
+        
+
+
 
     }
 
