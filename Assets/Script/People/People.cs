@@ -45,6 +45,7 @@ public abstract class People : MonoBehaviour
     {
         EventManager.SendEvent(GameEvents.PeopleDie);
         gameObject.GetComponent<SpriteRenderer>().sprite = deathSprite;
+        enabled = false;
     }
 
     private void OnDrawGizmos()
