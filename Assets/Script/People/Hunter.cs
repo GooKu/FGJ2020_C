@@ -20,11 +20,6 @@ public class Hunter : People
     {
         base.DetectPlayer(detectRadius);
 
-        if (playerController.IsStealth)
-        {
-            return;
-        }
-
         if (player != null)
         {
             ChaseTarget(player.transform, moveSpeed);
@@ -39,6 +34,9 @@ public class Hunter : People
 
     private void ChaseTarget(Transform target, float moveSpeed)
     {
+        if (playerController.IsStealth)
+            return;
+
         source.clip = peopleSounds[2];
         source.Play();
         float dist = (transform.position - target.position).sqrMagnitude;
