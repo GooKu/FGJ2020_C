@@ -7,12 +7,13 @@ public class GameUIManager : MonoBehaviour
     [SerializeField]
     private GameObject gameOverUI = null;
     [SerializeField]
-    private GameObject gameEndUI = null;
+    private GameEndUI gameEndUI = null;
 
     private void Start()
     {
         EventManager.AddListen(GameEvents.GameOver, GameOverHandle);
         EventManager.AddListen(GameEvents.GameEnd, GameEndHandle);
+        gameEndUI.Init();
     }
 
     private void OnDestroy()
@@ -28,6 +29,6 @@ public class GameUIManager : MonoBehaviour
 
     private void GameEndHandle(object[] callBack)
     {
-        gameEndUI.SetActive(true);
+        gameEndUI.Show();
     }
 }

@@ -65,6 +65,7 @@ public class Bomb : MonoBehaviour
         }
 
         GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
+        EventManager.SendEvent(GameEvents.BombExplsion);
 
         Destroy(gameObject);
     }
