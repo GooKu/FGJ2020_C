@@ -8,6 +8,7 @@ public abstract class People : MonoBehaviour
     protected Collider2D player;
     protected BearController playerController;
     protected GameMapManager mapManager;
+    [SerializeField] protected Sprite deathSprite;
 
     [SerializeField] protected float detectRadius;
     [SerializeField] protected float moveSpeed;
@@ -31,6 +32,11 @@ public abstract class People : MonoBehaviour
         {
             return;
         }
+    }
+
+    public virtual void Die()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = deathSprite;
     }
 
     private void OnDrawGizmos()

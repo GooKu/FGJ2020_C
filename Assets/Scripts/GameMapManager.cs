@@ -133,8 +133,9 @@ public class GameMapManager : MonoBehaviour
         {6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6}
     };
 
-    private List<int[,]> m_mapStages = new List<int[,]>();
-    private List<MapItem> m_listMapItems = new List<MapItem>();
+    public List<int[,]> m_mapStages = new List<int[,]>();
+    public List<MapItem> m_listMapItems = new List<MapItem>();
+
     private List<MapItem> m_listMapGrass = new List<MapItem>();
 
     [SerializeField]
@@ -213,11 +214,11 @@ public class GameMapManager : MonoBehaviour
         if ((from == (int)MapItemType.PINE_TREE) ||
             (from == (int)MapItemType.TREE_Y)    ||
             (from == (int)MapItemType.TREE_L)     ) {
-            mapResultStart.treeCount -= 1;
+            mapResultEnd.treeCount -= 1;
         } else if (from == (int)MapItemType.PINE_ROOT) {
-            mapResultStart.rootCount -= 1;
+            mapResultEnd.rootCount -= 1;
         } else if (from == (int)MapItemType.HOUSE_COMP) {
-            mapResultStart.houseCount -= 1;
+            mapResultEnd.houseCount -= 1;
         }
         if ((to == (int)MapItemType.PINE_TREE) ||
             (to == (int)MapItemType.TREE_Y)    ||
