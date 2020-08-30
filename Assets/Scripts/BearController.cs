@@ -96,21 +96,21 @@ public class BearController : MonoBehaviour
 
         var newPos = transform.position + moveVect * moveSpeed * Time.fixedDeltaTime;
         
-        if(newPos.x > 7.7f)
+        if(newPos.x > GameBound.MaxX)
         {
-            newPos.x = 7.7f;
-        }else if(newPos.x < -7.5f)
+            newPos.x = GameBound.MaxX;
+        }else if(newPos.x < GameBound.MinX)
         {
-            newPos.x = -7.5f;
+            newPos.x = GameBound.MinX;
         }
 
-        if (newPos.y > 6.6f)
+        if (newPos.y > GameBound.MaxY)
         {
-            newPos.y = 6.6f;
+            newPos.y = GameBound.MaxY;
         }
-        else if (newPos.y < -4.6f)
+        else if (newPos.y < GameBound.MinY)
         {
-            newPos.y = -4.6f;
+            newPos.y = GameBound.MinY;
         }
         
         transform.position = newPos;

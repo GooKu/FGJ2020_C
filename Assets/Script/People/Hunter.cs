@@ -6,10 +6,15 @@ public class Hunter : People
 {
     [SerializeField] private float shootRadius;
 
-    [SerializeField] private Transform[] wayPoints = new Transform[10];
+    [SerializeField] private GameObject[] wayPoints = new GameObject[10];
 
     [SerializeField] private float wayPointDetectDist;
     private int randomIndex = -1;
+
+    public void Init(GameObject[] wayPoints)
+    {
+        this.wayPoints = wayPoints;
+    }
 
     protected override void DetectPlayer(float detectRadius)
     {
@@ -48,9 +53,9 @@ public class Hunter : People
             randomIndex = Random.Range(1, wayPoints.Length);
         }
         
-        if ((transform.position - wayPoints[randomIndex].position).sqrMagnitude > wayPointDetectDist * wayPointDetectDist) 
+        if ((transform.position - wayPoints[randomIndex].transform.position).sqrMagnitude > wayPointDetectDist * wayPointDetectDist) 
         {
-            transform.position = Vector2.MoveTowards(transform.position, wayPoints[randomIndex].position, moveSpeed * Time.deltaTime);    //移到點
+            transform.position = Vector2.MoveTowards(transform.position, wayPoints[randomIndex].transform.position, moveSpeed * Time.deltaTime);    //移到點
         }
         else    //到點
         {
@@ -62,7 +67,4 @@ public class Hunter : People
     {
         playerController.Death();
     }
-
-
-
 }
