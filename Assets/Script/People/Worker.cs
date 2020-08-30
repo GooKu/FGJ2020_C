@@ -13,7 +13,6 @@ public class Worker : People
         Running
     }
 
-    public GameObject building;
     [SerializeField] private WorkerState curState;
 
     private MapItem item;
@@ -47,12 +46,8 @@ public class Worker : People
 
     private void Build()
     {
-        //find tree 
-        
-
         if (curState == WorkerState.Idle || curState == WorkerState.Running)
             curState = WorkerState.LockTree;
-
         
         if(curState == WorkerState.LockTree)
         {
@@ -71,9 +66,11 @@ public class Worker : People
             }
         }
 
-
         //build
-
+        if(curState == WorkerState.Building)
+        {
+            StartCoroutine(BuildHouse());
+        }
     }
 
 
@@ -81,6 +78,15 @@ public class Worker : People
      {
         yield return new WaitForSeconds(3f);
         mapManager.ChangeMapItem(transform.position, MapItemType.PINE_ROOT, .2f);  //cut down tree
+        curState = WorkerState.Building;
+        yield break;
+    }
+
+    private IEnumerator BuildHouse()
+    {
+        mapManager.ChangeMapItem(transform.position, MapItemType.HOUSE_HALF, .01f);
+        yield return new WaitForSeconds(3f);
+        mapManager.ChangeMapItem(transform.position, MapItemType.HOUSE_COMP, .01f);
         curState = WorkerState.Idle;
         yield break;
     }
