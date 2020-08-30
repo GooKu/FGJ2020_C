@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +31,14 @@ public class MapItem
         type = in_type;
         go = in_go;
     }
+}
+
+[Serializable]
+public class MapResult
+{
+    public int treeCount;
+    public int rootCount;
+    public int houseCount; 
 }
 
 public class GameMapManager : MonoBehaviour
@@ -97,16 +106,49 @@ public class GameMapManager : MonoBehaviour
         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
     };
 
+    private int[,] mapStage2 = new int[map_y_max, map_x_max] {
+        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,5,5,5,5,0,1,1,1,1,1},
+        {0,4,0,0,1,0,0,0,1,1,1,0,1,1,0,1,1,1,1,1,1,0,0,5,5,5,0,1,1,1,1,1},
+        {0,0,0,1,1,1,0,0,1,1,0,1,1,0,1,1,0,0,0,0,1,1,0,0,5,5,0,1,1,1,1,1},
+        {0,0,0,0,1,0,0,0,1,0,1,1,0,1,1,0,0,0,0,0,0,1,1,0,0,5,0,1,1,1,1,1},
+        {0,0,0,0,0,0,0,0,0,1,1,0,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0,1,1,1,1,1},
+        {0,0,1,0,0,0,3,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,1,1},
+        {0,0,1,1,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1},
+        {0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1},
+        {0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1},
+        {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,0,4,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,4,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,0,1,1,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,1,1,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,1,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {1,1,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,0,0,5,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,0,5,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {0,5,0,5,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {5,0,5,0,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6}
+    };
+
     public List<int[,]> m_mapStages = new List<int[,]>();
     public List<MapItem> m_listMapItems = new List<MapItem>();
+
     private List<MapItem> m_listMapGrass = new List<MapItem>();
+
+    [SerializeField]
+    public MapResult mapResultStart = new MapResult();
+    [SerializeField]
+    public MapResult mapResultEnd = new MapResult();
 
     private System.Random rnd;
 
     private void GenerateGrass()
     {
-        for (var y = 0; y < map_y_max; ++y) {
-            for (var x = 0; x < map_x_max; ++x) {
+        for (var y = 0; y < map_y_max+1; ++y) {
+            for (var x = 0; x < map_x_max+1; ++x) {
                 var n = 0.5f;
                 var odd = 0.25f;
                 float pos_x = -8.0f + (x * n) + ((y%2) == 1 ? odd : 0f);
@@ -124,16 +166,8 @@ public class GameMapManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void GenerateMap()
     {
-        rnd = new System.Random();
-
-        // var mapIndex = 0;
-        m_mapStages.Add(mapStage0);
-        m_mapStages.Add(mapStage1);
-
-        GenerateGrass();
-
         for (var y = 0; y < map_y_max; ++y) {
             for (var x = 0; x < map_x_max; ++x) {
                 if (m_mapStages[mapIndex][y,x] > 0) {
@@ -142,6 +176,7 @@ public class GameMapManager : MonoBehaviour
                     float pos_x = -8.0f + (x * n) + ((y%2) == 1 ? odd : 0f);
                     float pos_y = 7.0f + (-y * n);
                     int number = m_mapStages[mapIndex][y,x];
+                    UpdateMapResultStart(number);
                     var mapItem = new MapItem(CreateInst(GetMapInstBy(number),
                                               new Vector3(pos_x, pos_y, 0)),
                                               x, y, GetMapTypeBy(number));
@@ -155,6 +190,62 @@ public class GameMapManager : MonoBehaviour
                 }
             }
         }
+    }
+    
+    private void UpdateMapResultStart(int number)
+    {
+        if ((number == (int)MapItemType.PINE_TREE) ||
+            (number == (int)MapItemType.TREE_Y)    ||
+            (number == (int)MapItemType.TREE_L)     ) {
+            mapResultStart.treeCount += 1;
+        } else if (number == (int)MapItemType.PINE_ROOT) {
+            mapResultStart.rootCount += 1;
+        } else if (number == (int)MapItemType.HOUSE_COMP) {
+            mapResultStart.houseCount += 1;
+        }
+    }
+
+    private void UpdateMapResultEnd(int from, int to)
+    {
+        if (from == to) {
+            return; // no change, no count.
+        }
+
+        if ((from == (int)MapItemType.PINE_TREE) ||
+            (from == (int)MapItemType.TREE_Y)    ||
+            (from == (int)MapItemType.TREE_L)     ) {
+            mapResultEnd.treeCount -= 1;
+        } else if (from == (int)MapItemType.PINE_ROOT) {
+            mapResultEnd.rootCount -= 1;
+        } else if (from == (int)MapItemType.HOUSE_COMP) {
+            mapResultEnd.houseCount -= 1;
+        }
+        if ((to == (int)MapItemType.PINE_TREE) ||
+            (to == (int)MapItemType.TREE_Y)    ||
+            (to == (int)MapItemType.TREE_L)     ) {
+            mapResultEnd.treeCount += 1;
+        } else if (to == (int)MapItemType.PINE_ROOT) {
+            mapResultEnd.rootCount += 1;
+        } else if (to == (int)MapItemType.HOUSE_COMP) {
+            mapResultEnd.houseCount += 1;
+        }
+    }
+
+    private void Start()
+    {
+        rnd = new System.Random();
+
+        // var mapIndex = 0;
+        m_mapStages.Add(mapStage0);
+        m_mapStages.Add(mapStage1);
+        m_mapStages.Add(mapStage2);
+
+        GenerateGrass();
+        GenerateMap();
+
+        mapResultEnd.treeCount = mapResultStart.treeCount;
+        mapResultEnd.rootCount = mapResultStart.rootCount;
+        mapResultEnd.houseCount = mapResultStart.houseCount;
         
     }
 
@@ -229,7 +320,7 @@ public class GameMapManager : MonoBehaviour
 
     private GameObject CreateInst(string name, Vector3 pos)
     {
-        Object res = Resources.Load(name, typeof(GameObject));
+        var res = Resources.Load(name, typeof(GameObject));
 
         if (res == null) {
             Debug.Log ("CreateInst> Resources Load Failed!");
@@ -305,6 +396,7 @@ public class GameMapManager : MonoBehaviour
                 if (spriteRenderer) {
                     spriteRenderer.sprite = CreateSprite(GetSpriteNameBy(type));
                 }
+                UpdateMapResultEnd((int)m_mapStages[idx][item.y, item.x], (int)type);
                 m_mapStages[idx][item.y, item.x] = (int)type;
                 // break; // remove first item only.
             }
