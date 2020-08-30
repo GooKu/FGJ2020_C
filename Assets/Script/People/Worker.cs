@@ -44,6 +44,11 @@ public class Worker : People
         transform.position -= -runDir * moveSpeed * Time.deltaTime;
     }
 
+    private void DropC4()
+    {
+
+    }
+
     private void Build()
     {
         if (curState == WorkerState.Idle || curState == WorkerState.Running)
