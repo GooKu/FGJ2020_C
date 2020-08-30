@@ -49,7 +49,7 @@ public class Worker : People
 
     private void DropC4()
     {
-        int ran = Random.Range(0, 120);
+        int ran = Random.Range(0, 300);
         if (ran == 0)
             Instantiate(C4, transform.position, Quaternion.identity);
     }
