@@ -44,6 +44,7 @@ public abstract class People : MonoBehaviour
 
     public virtual void Die()
     {
+        EventManager.SendEvent(GameEvents.PeopleDie);
         gameObject.GetComponent<SpriteRenderer>().sprite = deathSprite;
     }
 
