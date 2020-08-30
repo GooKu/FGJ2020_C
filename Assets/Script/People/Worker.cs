@@ -28,13 +28,10 @@ public class Worker : People
     {
         base.DetectPlayer(detectRadius);
 
-        if (playerController.IsStealth)
-        {
-            return;
-        }
-
         if (player != null)
         {
+            if (playerController.IsStealth)
+                return;
             RunAway();
             if (curState == WorkerState.Running)
                 DropC4();
@@ -47,8 +44,6 @@ public class Worker : People
 
     private void RunAway()
     {
-        if (playerController.IsStealth)
-            return;
         curState = WorkerState.Running;
         source.Play();
         Vector3 runDir = (transform.position - player.transform.position).normalized;
@@ -57,7 +52,7 @@ public class Worker : People
 
     private void DropC4()
     {
-        int ran = UnityEngine.Random.Range(0, 200);
+        int ran = UnityEngine.Random.Range(0, 50);
         if (ran == 0)
             Instantiate(C4, transform.position, Quaternion.identity);
     }

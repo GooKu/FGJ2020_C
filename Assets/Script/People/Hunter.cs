@@ -22,6 +22,7 @@ public class Hunter : People
 
         if (player != null)
         {
+            
             ChaseTarget(player.transform, moveSpeed);
         }
         else
