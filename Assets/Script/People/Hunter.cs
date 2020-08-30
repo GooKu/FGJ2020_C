@@ -20,6 +20,11 @@ public class Hunter : People
     {
         base.DetectPlayer(detectRadius);
 
+        if (playerController.IsStealth)
+        {
+            return;
+        }
+
         if (player != null)
         {
             ChaseTarget(player.transform, moveSpeed);

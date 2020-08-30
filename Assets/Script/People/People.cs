@@ -34,11 +34,6 @@ public abstract class People : MonoBehaviour
     protected virtual void DetectPlayer(float detectRadius)
     {
         player = Physics2D.OverlapCircle(transform.position, detectRadius, playerLayer);
-
-        if (playerController.IsStealth)
-        {
-            return;
-        }
     }
 
     protected virtual void PeopleStop(object[] callback)

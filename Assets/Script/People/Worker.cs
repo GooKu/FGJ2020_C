@@ -28,6 +28,11 @@ public class Worker : People
     {
         base.DetectPlayer(detectRadius);
 
+        if (playerController.IsStealth)
+        {
+            return;
+        }
+
         if (player != null)
         {
             RunAway();
@@ -50,7 +55,7 @@ public class Worker : People
 
     private void DropC4()
     {
-        int ran = UnityEngine.Random.Range(0, 300);
+        int ran = UnityEngine.Random.Range(0, 200);
         if (ran == 0)
             Instantiate(C4, transform.position, Quaternion.identity);
     }
@@ -89,7 +94,7 @@ public class Worker : People
 
      private IEnumerator CutDownTree(MapItem item)
      {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         if (item.type != MapItemType.PINE_ROOT && item.type != MapItemType.HOUSE_HALF)
             mapManager.ChangeMapItem(transform.position, MapItemType.PINE_ROOT, .2f);  //cut down tree
         curState = WorkerState.Building;
@@ -98,7 +103,7 @@ public class Worker : People
 
     private IEnumerator BuildHouse()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         mapManager.ChangeMapItem(transform.position, MapItemType.HOUSE_COMP, .01f);
         curState = WorkerState.Idle;
         yield break;
