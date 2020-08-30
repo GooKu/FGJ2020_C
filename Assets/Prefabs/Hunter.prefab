@@ -98,6 +98,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  deathSprite: {fileID: 4412410694991241420, guid: ec2460c594de0a745ad3c9b597827a48,
+    type: 3}
   detectRadius: 3
   moveSpeed: 3
   shootRadius: 1
