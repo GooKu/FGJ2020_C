@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
+    public GameObject bar_bg = null;
+    public GameObject bar = null;
+
+    private const float countDownTimeMax = 5.0f;
+
     [SerializeField]
-    private float countDownTime = 5;
+    private float countDownTime = countDownTimeMax;
     [SerializeField]
     private float bombRadius = 1;
     [SerializeField]
@@ -20,6 +25,7 @@ public class Bomb : MonoBehaviour
 
     public void StartUp()
     {
+        EnableBar();
         StartCoroutine(countDown());
     }
 
@@ -30,6 +36,7 @@ public class Bomb : MonoBehaviour
             yield return null;
             countDownTime -= Time.deltaTime;
             //TODO: call UI
+            SetBar(countDownTime / countDownTimeMax);
         } while (countDownTime > 0);
 
 
@@ -49,5 +56,16 @@ public class Bomb : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void EnableBar()
+    {
+        this.bar_bg.SetActive(true);
+        this.bar.SetActive(true);
+    }
+
+    // 0.0f ~ 1.0f
+    private void SetBar(float value)
+    {
+        this.bar.transform.localScale = new Vector3(value, this.bar.transform.localScale.y, this.bar.transform.localScale.z);
+    }
 
 }
