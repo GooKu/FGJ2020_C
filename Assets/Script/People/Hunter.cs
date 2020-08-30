@@ -22,16 +22,22 @@ public class Hunter : People
 
         if (player != null)
         {
-            source.clip = peopleSounds[2];
-            source.Play();
             if (!playerController.IsStealth)
+            {
+                source.clip = peopleSounds[2];
+                source.Play();
                 ChaseTarget(player.transform, moveSpeed);
-            Patrol();
+            }
+            else
+            {
+                Patrol();
+            }
+            source.clip = peopleSounds[0];
+            source.Play();
+            
         }
         else
         {
-            source.clip = peopleSounds[0];
-            source.Play();
             Patrol();
         }
     }
