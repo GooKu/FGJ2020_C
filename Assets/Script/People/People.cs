@@ -27,7 +27,8 @@ public abstract class People : MonoBehaviour
 
     public void Update()
     {
-        DetectPlayer(detectRadius);
+        if(gameObject != null)
+            DetectPlayer(detectRadius);
     }
 
     protected virtual void DetectPlayer(float detectRadius)

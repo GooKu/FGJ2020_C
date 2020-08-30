@@ -26,14 +26,16 @@ public class Hunter : People
         }
         else
         {
-            //patrol
+            source.clip = peopleSounds[0];
+            source.Play();
             Patrol();
         }
     }
 
     private void ChaseTarget(Transform target, float moveSpeed)
     {
-        
+        source.clip = peopleSounds[2];
+        source.Play();
         float dist = (transform.position - target.position).sqrMagnitude;
 
         if (dist <= shootRadius * shootRadius)
@@ -65,6 +67,8 @@ public class Hunter : People
 
     private void Shoot()
     {
+        source.clip = peopleSounds[1];
+        source.Play();
         playerController.Death();
     }
 }
