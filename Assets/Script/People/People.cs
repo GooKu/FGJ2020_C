@@ -20,14 +20,14 @@ public abstract class People : MonoBehaviour
         playerController = (BearController)FindObjectOfType(typeof(BearController));
         mapManager = (GameMapManager)FindObjectOfType(typeof(GameMapManager));
         source = GetComponent<AudioSource>();
+
+        EventManager.AddListen(GameEvents.GameOver, PeopleStop);
+        EventManager.AddListen(GameEvents.GameEnd, PeopleStop);
     }
 
     public void Update()
     {
         DetectPlayer(detectRadius);
-
-        EventManager.AddListen(GameEvents.GameOver, PeopleStop);
-        EventManager.AddListen(GameEvents.GameEnd, PeopleStop);
     }
 
     protected virtual void DetectPlayer(float detectRadius)
@@ -42,8 +42,7 @@ public abstract class People : MonoBehaviour
 
     protected virtual void PeopleStop(object[] callback)
     {
-        if(this != null)
-            enabled = false;
+        enabled = false;
     }
 
     public virtual void Die()
