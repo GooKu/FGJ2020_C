@@ -73,3 +73,5 @@ crashlytics-build.properties
 # ignore folder meta
 *.meta
 !*.*.meta
+Assets/Fonts/NotoSansCJKtc-Bold.otf
+Assets/Fonts/NotoSansCJKtc-Regular.otf
