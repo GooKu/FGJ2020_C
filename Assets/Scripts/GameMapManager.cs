@@ -483,6 +483,7 @@ public class GameMapManager : MonoBehaviour
     public void DestoryMapItem(Vector3 pos, float range = 1.0f)
     {
         var idx = mapIndex;
+        var removeList = new List<MapItem>();
         foreach (var item in m_listMapItems) {
             var dist = Vector3.Distance(pos, item.go.transform.position);
             if (item.type != MapItemType.HOUSE_COMP) {
@@ -492,12 +493,14 @@ public class GameMapManager : MonoBehaviour
             if (dist < range) {
                 UpdateMapResultEnd((int)m_mapStages[idx][item.y, item.x], (int)MapItemType.NONE);
                 m_mapStages[idx][item.y, item.x] = (int)MapItemType.NONE;
-                Destroy(item.go);
+                removeList.Add(item);
                 // break; // remove first item only.
             }
         }        
-
+        foreach (var obj in removeList) {
+            m_listMapItems.Remove(obj);
+            Destroy(obj.go);
+        }
     }
-
-
+    
 }
