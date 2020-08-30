@@ -183,6 +183,7 @@ public class GameMapManager : MonoBehaviour
                     // Debug.Log($"map[{y},{x}] = {m_mapStages[mapIndex][y,x]}");
                     var spriteRenderer = mapItem.go.GetComponent<SpriteRenderer>();
                     if (spriteRenderer) {
+                        spriteRenderer.sprite = CreateSprite(GetSpriteNameBy((MapItemType)number));
                         spriteRenderer.sortingOrder = y;
                     }
                     mapItem.go.transform.localScale = new Vector3(2.0f, 2.0f, 1.0f);
