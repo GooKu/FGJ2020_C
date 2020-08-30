@@ -11,6 +11,8 @@ public class GameEndUI : MonoBehaviour
     private Text killPeopleTxt = null;
     [SerializeField]
     private Text bombExplosionTxt = null;
+    [SerializeField]
+    private GameMapManager gameMapManager = null;
 
     private int peopleDieCount;
     private int bombExplosionCount;
@@ -31,7 +33,9 @@ public class GameEndUI : MonoBehaviour
 
     public void Show()
     {
-        //TODO:        forestPresentTxt
+        float forestPresent = gameMapManager.mapResultEnd.treeCount / (float)gameMapManager.mapResultStart.treeCount;
+
+        forestPresentTxt.text = forestPresent.ToString("#0.00%");
         killPeopleTxt.text = peopleDieCount.ToString();
         bombExplosionTxt.text = bombExplosionCount.ToString();
         gameObject.SetActive(true);
