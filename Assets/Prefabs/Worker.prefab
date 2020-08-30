@@ -100,8 +100,7 @@ MonoBehaviour:
     m_Bits: 256
   deathSprite: {fileID: 21300000, guid: 91ec9c4d8bd5cc546b353a8dd4811a83, type: 3}
   source: {fileID: 0}
-  peopleSounds:
-  - {fileID: 8300000, guid: cc75b9f2e27cd33408e58a3c34090546, type: 3}
+  peopleSounds: []
   detectRadius: 1.5
   moveSpeed: 3
   C4: {fileID: 4963615141095241277, guid: b5295bc4ee2f1ab40816c7c7ccd73260, type: 3}
@@ -115,7 +114,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cc75b9f2e27cd33408e58a3c34090546, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

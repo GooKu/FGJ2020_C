@@ -43,15 +43,9 @@ public class Worker : People
     private void RunAway()
     {
         curState = WorkerState.Running;
-        PlayScaredSound();
+        source.Play();
         Vector3 runDir = (transform.position - player.transform.position).normalized;
         transform.position -= -runDir * moveSpeed * Time.deltaTime;
-    }
-
-    private void PlayScaredSound()
-    {
-        source.clip = peopleSounds[0];
-        source.Play();
     }
 
     private void DropC4()

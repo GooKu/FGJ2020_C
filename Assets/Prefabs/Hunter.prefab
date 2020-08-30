@@ -100,6 +100,10 @@ MonoBehaviour:
     m_Bits: 256
   deathSprite: {fileID: 4412410694991241420, guid: ec2460c594de0a745ad3c9b597827a48,
     type: 3}
+  source: {fileID: 0}
+  peopleSounds:
+  - {fileID: 8300000, guid: b66060a3e4214c744a80cd7f7a81e61e, type: 3}
+  - {fileID: 8300000, guid: 05aabd21b03a2ce40ac88d5c294fe685, type: 3}
   detectRadius: 3
   moveSpeed: 3
   shootRadius: 1
